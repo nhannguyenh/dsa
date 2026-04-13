@@ -59,3 +59,4 @@ jobs:
           name: Test report
           path: "**/surefire-reports/*.xml"
           reporter: java-junit
+          collapsed: never
