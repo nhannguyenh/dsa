@@ -36,6 +36,8 @@ jobs:
         run: mvn clean install -DskipTests
   test:
     name: Unit test
+    needs:
+      - build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout git repository
