@@ -17,4 +17,18 @@ public class ArrayDemo {
         }
         return elementArrays.toString();
     }
+
+    public int[] addElement(int[] array, int value, int position) {
+        int[] newArray = new int[array.length + 1];
+        for (int index = array.length - 1; index >= 0; index--) {
+            if (index == position) {
+                newArray[index] = value;
+            } else if (index < position) {
+                newArray[index] = array[index];
+            } else {
+                newArray[index] = array[index - 1];
+            }
+        }
+        return newArray;
+    }
 }

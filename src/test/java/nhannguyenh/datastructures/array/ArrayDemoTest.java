@@ -49,4 +49,40 @@ class ArrayDemoTest {
     void giveIntegerArray_thenReturnElements() {
         assertEquals("1, 2, 3", arrayDemo.getAllElements(new int[] {1, 2, 3}));
     }
+
+    @Test
+    void giveIntegerValue_whenAddToBeginningArray_thenReturnArrayWithNewElement() {
+        int[] input = new int[]{1, 2, 3, 0};
+        int[] expected = new int[]{4, 1, 2, 3, 0};
+
+        int[] actual = arrayDemo.addElement(input, 4, 0);
+
+        for (int i = 0; i < expected.length; i++) {
+            assertEquals(expected[i], actual[i]);
+        }
+    }
+
+    @Test
+    void giveIntegerValue_whenAddToEndArray_thenReturnArrayWithNewElement() {
+        int[] input = new int[]{1, 2, 3, 0};
+        int[] expected = new int[]{1, 2, 3, 4, 0};
+
+        int[] actual = arrayDemo.addElement(input, 4, 3);
+
+        for (int i = 0; i < expected.length; i++) {
+            assertEquals(expected[i], actual[i]);
+        }
+    }
+
+    @Test
+    void giveIntegerValue_whenAddToAnyIndex_thenReturnArrayWithNewElement() {
+        int[] input = new int[]{1, 2, 3, 0};
+        int[] expected = new int[]{1, 4, 2, 3, 0};
+
+        int[] actual = arrayDemo.addElement(input, 4, 1);
+
+        for (int i = 0; i < expected.length; i++) {
+            assertEquals(expected[i], actual[i]);
+        }
+    }
 }
