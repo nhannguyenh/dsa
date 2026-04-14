@@ -31,4 +31,17 @@ public class ArrayDemo {
         }
         return newArray;
     }
+
+    public int[] removeElement(int[] array, int position) {
+        if (position == array.length - 1) {
+            array[position] = 0;
+            return array;
+        }
+
+        for (int index = position; index < array.length - 1; index++) {
+            array[index] = array[index + 1];
+        }
+        array[array.length - 1] = 0;
+        return array;
+    }
 }

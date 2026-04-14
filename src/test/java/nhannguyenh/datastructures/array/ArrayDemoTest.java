@@ -85,4 +85,40 @@ class ArrayDemoTest {
             assertEquals(expected[i], actual[i]);
         }
     }
+
+    @Test
+    void givePositionAtTheBeginningOfArray_whenRemoveFromArray_thenReturnArrayWithoutElementRemoved() {
+        int[] input = new int[]{1, 2, 3, 4};
+        int[] expected = new int[]{2, 3, 4, 0};
+
+        int[] actual = arrayDemo.removeElement(input, 0);
+
+        for (int i = 0; i < expected.length; i++) {
+            assertEquals(expected[i], actual[i]);
+        }
+    }
+
+    @Test
+    void givePositionAtTheEndOfArray_whenRemoveFromArray_thenReturnArrayWithoutElementRemoved() {
+        int[] input = new int[]{1, 2, 3, 4};
+        int[] expected = new int[]{1, 2, 3, 0};
+
+        int[] actual = arrayDemo.removeElement(input, 3);
+
+        for (int i = 0; i < expected.length; i++) {
+            assertEquals(expected[i], actual[i]);
+        }
+    }
+
+    @Test
+    void givePositionAtAnyPosition_whenRemoveFromArray_thenReturnArrayWithoutElementRemoved() {
+        int[] input = new int[]{1, 2, 3, 4};
+        int[] expected = new int[]{1, 3, 4, 0};
+
+        int[] actual = arrayDemo.removeElement(input, 1);
+
+        for (int i = 0; i < expected.length; i++) {
+            assertEquals(expected[i], actual[i]);
+        }
+    }
 }
