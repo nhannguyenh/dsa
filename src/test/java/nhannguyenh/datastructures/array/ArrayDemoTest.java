@@ -39,4 +39,14 @@ class ArrayDemoTest {
                 exception.getMessage()
         );
     }
+
+    @Test
+    void giveEmptyArray_thenReturnNoElement() {
+        assertEquals("", arrayDemo.getAllElements(new int[] {}));
+    }
+
+    @Test
+    void giveIntegerArray_thenReturnElements() {
+        assertEquals("1, 2, 3", arrayDemo.getAllElements(new int[] {1, 2, 3}));
+    }
 }
