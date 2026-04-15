@@ -5,3 +5,5 @@ This repository is used for learning and practicing the Data Structures and Algo
 
 ## Data Structures
 - Array
+- Hashing
+- String
