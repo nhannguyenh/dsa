@@ -1,4 +1,4 @@
-package nhannguyenh.datastructures.array;
+package nhannguyenh.datastructures;
 
 public class ArrayDemo {
 
