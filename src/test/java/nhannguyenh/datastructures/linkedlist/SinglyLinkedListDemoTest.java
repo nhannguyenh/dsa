@@ -27,42 +27,42 @@ class SinglyLinkedListDemoTest {
 
     @Test
     void shouldReturnData_whenLinkedListHasOneElement() {
-        assertEquals("1", singlyLinkedList.traversal(new SinglyLinkedListNode(1)));
+        assertEquals("1", singlyLinkedList.traversal(new Node(1)));
     }
 
     @Test
     void shouldReturnDataChain_whenLinkedListHasMultipleElements() {
-        SinglyLinkedListNode head = initSinglyLinkedList();
+        Node head = initSinglyLinkedList();
 
         assertEquals("1 -> 3 -> 5", singlyLinkedList.traversal(head));
     }
 
     @Test
     void shouldReturnNewElement_whenAddingNewElementToBeginning() {
-        SinglyLinkedListNode head = singlyLinkedList.insertFirst(null, new SinglyLinkedListNode(7));
+        Node head = singlyLinkedList.insertFirst(null, new Node(7));
         assertEquals("7", singlyLinkedList.traversal(head));
     }
 
     @Test
     void shouldReturnLinkedListHasCorrectOrder_whenAddingNewElementToBeginning() {
-        SinglyLinkedListNode head = initSinglyLinkedList();
+        Node head = initSinglyLinkedList();
 
-        head = singlyLinkedList.insertFirst(head, new SinglyLinkedListNode(7));
+        head = singlyLinkedList.insertFirst(head, new Node(7));
 
         assertEquals("7 -> 1 -> 3 -> 5", singlyLinkedList.traversal(head));
     }
 
     @Test
     void shouldReturnNewElement_whenAddingNewElementToTheEnd() {
-        SinglyLinkedListNode head = singlyLinkedList.insertLast(null, new SinglyLinkedListNode(7));
+        Node head = singlyLinkedList.insertLast(null, new Node(7));
         assertEquals("7", singlyLinkedList.traversal(head));
     }
 
     @Test
     void shouldReturnLinkedListHasCorrectOrder_whenAddingNewElementToTheEnd() {
-        SinglyLinkedListNode head = initSinglyLinkedList();
+        Node head = initSinglyLinkedList();
 
-        head = singlyLinkedList.insertLast(head, new SinglyLinkedListNode(7));
+        head = singlyLinkedList.insertLast(head, new Node(7));
 
         assertEquals("1 -> 3 -> 5 -> 7", singlyLinkedList.traversal(head));
     }
@@ -71,7 +71,7 @@ class SinglyLinkedListDemoTest {
     void giveInvalidIndex_whenHeadIsNull_thenThrowIndexOutOfBoundsException() {
         Exception exception = assertThrows(
                 IndexOutOfBoundsException.class,
-                () -> singlyLinkedList.insertAt(null, new SinglyLinkedListNode(7), 2)
+                () -> singlyLinkedList.insertAt(null, new Node(7), 2)
         );
 
         assertEquals("Position is out of the LinkedList's range", exception.getMessage());
@@ -79,9 +79,9 @@ class SinglyLinkedListDemoTest {
 
     @Test
     void shouldReturnLinkedListHasCorrectOrder_whenAddingNewElementToAnyPosition() {
-        SinglyLinkedListNode head = initSinglyLinkedList();
+        Node head = initSinglyLinkedList();
 
-        head = singlyLinkedList.insertAt(head, new SinglyLinkedListNode(7), 3);
+        head = singlyLinkedList.insertAt(head, new Node(7), 3);
 
         assertEquals("1 -> 3 -> 7 -> 5", singlyLinkedList.traversal(head));
     }
@@ -98,7 +98,7 @@ class SinglyLinkedListDemoTest {
 
     @Test
     void shouldReturnLinkedList_whenRemoveHead() {
-        SinglyLinkedListNode head = initSinglyLinkedList();
+        Node head = initSinglyLinkedList();
 
         head = singlyLinkedList.removeFirst(head);
 
@@ -117,7 +117,7 @@ class SinglyLinkedListDemoTest {
 
     @Test
     void shouldReturnLinkedList_whenRemoveLastElement() {
-        SinglyLinkedListNode head = initSinglyLinkedList();
+        Node head = initSinglyLinkedList();
 
         head = singlyLinkedList.removeLast(head);
 
@@ -126,17 +126,17 @@ class SinglyLinkedListDemoTest {
 
     @Test
     void shouldReturnLinkedList_whenRemoveElementAtAnyPosition() {
-        SinglyLinkedListNode head = initSinglyLinkedList();
+        Node head = initSinglyLinkedList();
 
         head = singlyLinkedList.removeAt(head, 3);
 
         assertEquals("1 -> 3", singlyLinkedList.traversal(head));
     }
 
-    private SinglyLinkedListNode initSinglyLinkedList() {
-        SinglyLinkedListNode head = new SinglyLinkedListNode(1);
-        SinglyLinkedListNode newNode = new SinglyLinkedListNode(3);
-        SinglyLinkedListNode tail = new SinglyLinkedListNode(5);
+    private Node initSinglyLinkedList() {
+        Node head = new Node(1);
+        Node newNode = new Node(3);
+        Node tail = new Node(5);
 
         head.next = newNode;
         newNode.next = tail;

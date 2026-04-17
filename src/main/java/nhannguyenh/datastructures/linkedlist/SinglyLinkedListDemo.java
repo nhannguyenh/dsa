@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class SinglyLinkedListDemo {
 
-    public String traversal(SinglyLinkedListNode head) {
+    public String traversal(Node head) {
         if (Objects.isNull(head)) {
             return "";
         }
@@ -21,7 +21,7 @@ public class SinglyLinkedListDemo {
         return result.toString();
     }
 
-    public SinglyLinkedListNode insertFirst(SinglyLinkedListNode head, SinglyLinkedListNode newNode) {
+    public Node insertFirst(Node head, Node newNode) {
         if (Objects.isNull(head)) {
             return newNode;
         }
@@ -30,12 +30,12 @@ public class SinglyLinkedListDemo {
         return newNode;
     }
 
-    public SinglyLinkedListNode insertLast(SinglyLinkedListNode head, SinglyLinkedListNode newNode) {
+    public Node insertLast(Node head, Node newNode) {
         if (Objects.isNull(head)) {
             return newNode;
         }
 
-        SinglyLinkedListNode currentElement = head;
+        Node currentElement = head;
         while (currentElement.next != null) {
             currentElement = currentElement.next;
         }
@@ -43,7 +43,7 @@ public class SinglyLinkedListDemo {
         return head;
     }
 
-    public SinglyLinkedListNode insertAt(SinglyLinkedListNode head, SinglyLinkedListNode newNode, int position) {
+    public Node insertAt(Node head, Node newNode, int position) {
         if (Objects.isNull(head) && position > 1) {
             throw new IndexOutOfBoundsException("Position is out of the LinkedList's range");
         }
@@ -52,7 +52,7 @@ public class SinglyLinkedListDemo {
             return insertFirst(null, newNode);
         }
 
-        SinglyLinkedListNode currentElement = head;
+        Node currentElement = head;
         for (int i = 1; i < position - 1; i++) {
             currentElement = currentElement.next;
         }
@@ -62,7 +62,7 @@ public class SinglyLinkedListDemo {
         return head;
     }
 
-    public SinglyLinkedListNode removeFirst(SinglyLinkedListNode head) {
+    public Node removeFirst(Node head) {
         if (Objects.isNull(head)) {
             throw new IndexOutOfBoundsException("Can't remove from empty LinkedList");
         }
@@ -71,12 +71,12 @@ public class SinglyLinkedListDemo {
         return head;
     }
 
-    public SinglyLinkedListNode removeLast(SinglyLinkedListNode head) {
+    public Node removeLast(Node head) {
         if (Objects.isNull(head)) {
             throw new IndexOutOfBoundsException("Can't remove from empty LinkedList");
         }
 
-        SinglyLinkedListNode currentElement = head;
+        Node currentElement = head;
         while (Objects.nonNull(currentElement.next.next)) {
             currentElement = currentElement.next;
         }
@@ -85,8 +85,8 @@ public class SinglyLinkedListDemo {
         return head;
     }
 
-    public SinglyLinkedListNode removeAt(SinglyLinkedListNode head, int position) {
-        SinglyLinkedListNode currentElement = head;
+    public Node removeAt(Node head, int position) {
+        Node currentElement = head;
         for (int i = 1; i < position - 1; i++) {
             currentElement = currentElement.next;
         }
