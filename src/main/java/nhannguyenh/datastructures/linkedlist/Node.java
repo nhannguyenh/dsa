@@ -1,10 +1,10 @@
 package nhannguyenh.datastructures.linkedlist;
 
-public class SinglyLinkedListNode {
+public class Node {
     int data;
-    SinglyLinkedListNode next;
+    Node next;
 
-    public SinglyLinkedListNode(int data) {
+    public Node(int data) {
         this.data = data;
         this.next = null;
     }
