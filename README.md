@@ -13,3 +13,9 @@ This repository is used for learning and practicing the Data Structures and Algo
 - Queue
 - Deque
 - Tree
+
+## Solved Problems
+### LeetCode (1)
+| Title                                                                                                                                     | Topic                | Difficulty |
+|-------------------------------------------------------------------------------------------------------------------------------------------|----------------------|:----------:|
+| [Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/description/?envType=study-plan-v2&envId=leetcode-75) | String, Two Pointers |    Easy    |
