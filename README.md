@@ -12,3 +12,4 @@ This repository is used for learning and practicing the Data Structures and Algo
 - Stack
 - Queue
 - Deque
+- Tree
